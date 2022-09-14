@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+.box {
+    background-color: grey;
+    margin: 10px;
+    border: 1px solid black;
+    height: 200px;
+    overflow: hidden;
+}
+
+.box-header {
+    float: right;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    margin: 0px 0px 10px 10px;
+    border-left: 1px solid black; 
+    border-bottom: 1px solid black;
+}
+
+.box-text {
+    clear: both;
+    padding: 10px;
+}
+
+/** Add scrollbar on hover **/
+.box:hover {
+    cursor: row-resize;
+    overflow-y: scroll;
+}
+
+#chicken>h2 {
+    background-color: pink;
+    color: black;
+}
+
+#beef>h2 {
+    background-color: darkred;
+    color: white;
+}
+
+#sushi>h2 {
+    background-color: palegoldenrod;
+    color: black;
+}
+
+/** Responsive Framework **/
+
+.row {
+    width: 100%;
+}
+
+/** LARGE DEVICES ONLY **/
+@media (min-width: 992px) {
+    .col-lg-4 {
+        float: left;
+        width: 33.33%;
+    }
+
+    .header-sm, .box-header-sm {
+        display: none;
+    }
+}
+
+/** MEDIUM DEVICES ONLY **/
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-md-2 {
+        float: left;
+        width: 50%;
+    }
+
+    .col-md-1 {
+        float: left;
+        width: 100%;
+    }
+
+    .header-sm, .box-header-sm {
+        display: none;
+    }
+}
+
+/** SMALL DEVICES ONLY **/
+@media (max-width: 767px) {
+    .col-sm-1 {
+        float: left;
+        width: 100%;
+    }
+
+    .box-header {
+        width: 100%;
+        margin: 0px;
+        border-left: none;
+        border-bottom: 1px solid black;
+    }
+
+    .header-lg, .header-md, .box-header-lg, .box-header-md {
+        display: none;
+    }
+
+    .header-sm {
+        text-align: left;
+        float: left;
+        padding-left: 10px;
+    }
+
+    h1 {
+        font-family: Tahoma, Verdana, sans-serif;
+        font-size: 20px;
+    }
+
+}
