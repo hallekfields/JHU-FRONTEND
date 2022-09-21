@@ -1,56 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <title>Assignment 3</title>
     </head>
     <body>
+        <header>
+            <nav id="header-nav" class="navbar navbar-default border border-dark">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class="row">
+                            <div class="navbar-brand">
+                                <a href="index.html">
+                                    <h1 class="h1">Food, LLC</h1>
+                                </a>
+                            </div>
+
+                            <button type="button" class="navbar-toggle collapsed visible-xs" data-toggle="collapse" data-target="#collapsible-nav" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="row">
+                            <div id="collapsible-nav" class="collapse navbar-collapse hidden-lg hidden-md hidden-sm">
+                                <ul id="nav-list" class="nav navbar-nav navbar-right hidden-lg hidden-md hidden-sm text-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#chicken">Chicken <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#beef">Beef </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#sushi">Sushi </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid">
+            <div class="row header text-center" id="menu">
+                <h2 class="h2">Our Menu</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <section class="box" id="chicken">
+                        <h3 class="h3 box-header text-center">
+                            <span>Chicken</span>
+                        </h3>
+                        <p class="box-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac turpis egestas. Tristique risus nec feugiat in. Risus nec feugiat in fermentum posuere urna nec tincidunt. Erat pellentesque adipiscing commodo elit. Porta non pulvinar neque laoreet suspendisse interdum. Id venenatis a condimentum vitae sapien pellentesque. Porttitor massa id neque aliquam vestibulum morbi blandit. Etiam diam quis enim lobortis scelerisque fermentum dui.
+                        </p>
+                        <p class="return-top-link">
+                            <a href="#menu">Return to top</a>
+                        </p>
+                    </section>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <section class="box" id="beef">
+                        <h3 class="h3 box-header text-center">
+                            <span>Beef</span>
+                        </h3>
+                        <p class="box-text">
+                            Leo urna molestie at elementum eu facilisis sed odio. Sed pulvinar proin gravida hendrerit. Dui accumsan sit amet nulla facilisi morbi tempus. Purus sit amet luctus venenatis lectus magna fringilla. In nisl nisi scelerisque eu ultrices. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Sed risus pretium quam vulputate dignissim suspendisse in est. Urna cursus eget nunc scelerisque viverra mauris. Est placerat in egestas erat imperdiet sed euismod.
+                        </p>
+                        <p class="return-top-link">
+                            <a href="#menu">Return to top</a>
+                        </p>
+                    </section>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <section class="box" id="sushi">
+                        <h3 class="h3 box-header text-center">
+                            <span>Sushi</span>
+                        </h3>
+                        <p class="box-text">
+                            Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. Tempor commodo ullamcorper a lacus vestibulum sed arcu. Eu consequat ac felis donec et odio pellentesque diam. Cursus mattis molestie a iaculis at erat. Id velit ut tortor pretium viverra suspendisse potenti. Feugiat nisl pretium fusce id velit ut tortor. At quis risus sed vulputate odio ut enim. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus. Ipsum consequat nisl vel pretium lectus quam id leo in. Non odio euismod lacinia at quis risus sed vulputate odio.
+                        </p>
+                        <p class="return-top-link">
+                            <a href="#menu">Return to top</a>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
 
-        <div class="row header" id="menu">
-            <h1 class="header-lg header-md">Our Menu</h1>
-            <h1 class="header-sm">Categories</h1>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <section class="box" id="chicken">
-                    <h2 class="box-header">
-                        <span class="box-header-lg box-header-md">Chicken</span>
-                        <span class="box-header-sm">Give our delicious, expertly-prepared chicken and poultry dishes a try</span>
-                    </h2>
-                    <p class="box-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac turpis egestas. Tristique risus nec feugiat in. Risus nec feugiat in fermentum posuere urna nec tincidunt. Erat pellentesque adipiscing commodo elit. Porta non pulvinar neque laoreet suspendisse interdum. Id venenatis a condimentum vitae sapien pellentesque. Porttitor massa id neque aliquam vestibulum morbi blandit. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui.
-                    </p>
-                </section>
-            </div>
-            
-
-            <div class="col-lg-4 col-md-2 col-sm-1">
-                <section class="box" id="beef">
-                    <h2 class="box-header">
-                        <span class="box-header-lg box-header-md">Beef</span>
-                        <span class="box-header-sm">Or maybe you would prefer to enjoy one of our savory beef entrees</span>
-                    </h2>
-                    <p class="box-text">
-                        Leo urna molestie at elementum eu facilisis sed odio. Sed pulvinar proin gravida hendrerit. Dui accumsan sit amet nulla facilisi morbi tempus. Purus sit amet luctus venenatis lectus magna fringilla. In nisl nisi scelerisque eu ultrices. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Sed risus pretium quam vulputate dignissim suspendisse in est. Urna cursus eget nunc scelerisque viverra mauris. Est placerat in egestas erat imperdiet sed euismod.
-                    </p>
-                </section>
-            </div>
-
-            <div class="col-lg-4 col-md-1 col-sm-1">
-                <section class="box" id="sushi">
-                    <h2 class="box-header">
-                        <span class="box-header-lg box-header-md">Chicken</span>
-                        <span class="box-header-sm">For a fresh twist, dine on some of our hand-crafted sushi options</span>
-                    </h2>
-                    <p class="box-text">
-                        Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. Tempor commodo ullamcorper a lacus vestibulum sed arcu. Eu consequat ac felis donec et odio pellentesque diam. Cursus mattis molestie a iaculis at erat. Id velit ut tortor pretium viverra suspendisse potenti. Feugiat nisl pretium fusce id velit ut tortor. At quis risus sed vulputate odio ut enim. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus. Ipsum consequat nisl vel pretium lectus quam id leo in. Non odio euismod lacinia at quis risus sed vulputate odio.
-                    </p>
-                </section>
-            </div>
-        </div>
     </body>
 </html>
