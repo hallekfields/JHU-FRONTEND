@@ -22,6 +22,7 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var aboutPageHtml = "snippets/about.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -335,6 +336,31 @@ function insertItemPortionName(html,
   html = insertProperty(html, portionPropName, portionValue);
   return html;
 }
+
+// Function for class: Generate Random Number
+function generateRandomRating(html) {
+  var randomRating = Math.ceil(Math.random() * 5);
+  for (let i = 1; i <= 5; i++) {
+    let className = 'class' + i;
+    let classValue = 'fa';
+    if (i <= randomRating) {
+      classValue = 'fa fa-star';
+    }
+    else {
+      classValue = 'fa fa-star-o';
+    }
+    html = insertProperty(html, className, classValue);
+  }
+  insertHtml('#main-content', html);
+}
+
+dc.loadAboutPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    aboutPageHtml,
+    generateRandomRating,
+    false);
+};
 
 
 global.$dc = dc;
