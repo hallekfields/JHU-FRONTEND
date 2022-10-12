@@ -1,7 +1,11 @@
 .red { 
     color: red;
+    padding: 5px;
+    border: solid 1px red;
 }
 
 .green { 
     color: green;
+    padding: 5px;
+    border: solid 1px green;
 }
