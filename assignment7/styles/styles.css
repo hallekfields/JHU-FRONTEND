@@ -1,0 +1,27 @@
+.red { 
+    color: red;
+    padding: 5px;
+    border: solid 1px red;
+}
+
+.green { 
+    color: green;
+    padding: 5px;
+    border: solid 1px green;
+}
+
+.emptyMessage {
+    font-weight: bold;
+    color: red;
+    font-size: 1.2em;
+  }
+  li {
+    margin-bottom: 7px;
+    font-size: 1.2em;
+  }
+  li > button {
+    margin-left: 6px;
+  }
+  button > span {
+    color: green;
+  }
