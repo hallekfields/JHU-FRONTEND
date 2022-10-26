@@ -5,11 +5,11 @@
 
     .service('ShoppingListCheckOffService', function() {
         this.toBuy = [
-            { name: "cookies", quantity: 10 },
-            { name: "cupcakes", quantity: 6 },
-            { name: "donuts", quantity: 13 },
-            { name: "pies", quantity: 3 },
-            { name: "brownies", quantity: 9 }
+            { name: "cookies", quantity: 10, pricePerItem: 2 },
+            { name: "cupcakes", quantity: 6, pricePerItem: 3 },
+            { name: "donuts", quantity: 13, pricePerItem: 4 },
+            { name: "pies", quantity: 3, pricePerItem: 10 },
+            { name: "brownies", quantity: 9, pricePerItem: 3 }
         ];
         this.alreadyBought = [];
 
@@ -23,7 +23,7 @@
         $scope.toBuy = ShoppingListCheckOffService.toBuy;
 
         $scope.displayBuy = function(item) {
-            return 'Buy ' + item.quantity + ' ' + item.name;
+            return 'Buy ' + (item.quantity > 0 ? item.quantity : 0)  + ' ' + item.name;
         }
 
         $scope.buyItem = function(item) {
@@ -34,8 +34,16 @@
         $scope.alreadyBought = ShoppingListCheckOffService.alreadyBought;
 
         $scope.displayBought = function(item) {
-            return 'Bought ' + item.quantity + ' ' + item.name;
+            return 'Bought ' + (item.quantity > 0 ? item.quantity : 0) + ' ' + item.name + ' for ';
         }
+    })
+    .filter('totalPriceFilter', function () { 
+        return function(price) {
+            return '$$' + price.toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            });
+        };
     });
 
 })();
