@@ -1,0 +1,12 @@
+<table ng-if="found.items.length > 0">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+  <tr ng-repeat="item in found.items track by $index">
+    <td>{{ item.name }}</td>
+    <td>{{ item.description }}</td>
+    <td><button ng-click="found.removeItem($index)">I Don't Want This One!</button></td>
+  </tr>
+</table>
