@@ -2,8 +2,8 @@
 
 <h3>List of Categories</h3>
 <ul>
-    <li ng-repeat="item in categoryList">
-        {{ item.name }} 
+    <li ng-repeat="item in categoryList.items">
+        <a ui-sref="mainList.itemDetail({categoryShortName: {{item.short_name}}})">{{ item.name }} </a>
     </li>
 </ul>
   

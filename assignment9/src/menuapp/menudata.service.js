@@ -17,7 +17,7 @@
             url: (CategoriesApiEndPoint)
             }).then(function (result) {
                 // return processed items
-                return result;
+                return result.data;
             });
         };
     
@@ -27,7 +27,7 @@
             url: (ItemsApiEndPoint + categoryShortName + '.json')
             }).then(function (result) {
                 // return processed items
-                return result;
+                return result.data;
             });
         };
     }
