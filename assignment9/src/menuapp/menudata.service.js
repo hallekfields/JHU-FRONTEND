@@ -17,6 +17,7 @@
             url: (CategoriesApiEndPoint)
             }).then(function (result) {
                 // return processed items
+                //console.log(result.data);
                 return result.data;
             });
         };
@@ -27,9 +28,9 @@
             url: (ItemsApiEndPoint + categoryShortName + '.json')
             }).then(function (result) {
                 // return processed items
-                console.log(ItemsApiEndPoint + categoryShortName + '.json');
-                console.log(result);
-                return result.data;
+                //console.log(ItemsApiEndPoint + categoryShortName + '.json');
+                console.log(result.data);
+                return result.data.menu_items;
             });
         };
     }

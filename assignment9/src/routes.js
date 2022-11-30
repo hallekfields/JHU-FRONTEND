@@ -36,8 +36,9 @@
         templateUrl: 'src/menuapp/templates/items.template.html',
         controller: 'ItemsController as itemList',
         resolve: {
-          item: ['$stateParams', 'MenuDataService',
+          items: ['$stateParams', 'MenuDataService',
                 function ($stateParams, MenuDataService) {
+                  console.log($stateParams);
                   return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
                 }]
           }
