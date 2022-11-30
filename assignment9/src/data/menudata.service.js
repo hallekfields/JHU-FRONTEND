@@ -7,8 +7,8 @@
     .constant('ItemsApiEndPoint', "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/");
     
     
-    MenuSearchService.$inject = ['$http', 'CategoriesApiEndPoint', 'ItemsApiEndPoint'];
-    function MenuSearchService($http, CategoriesApiEndPoint, ItemsApiEndPoint) {
+    MenuDataService.$inject = ['$http', 'CategoriesApiEndPoint', 'ItemsApiEndPoint'];
+    function MenuDataService($http, CategoriesApiEndPoint, ItemsApiEndPoint) {
         var service = this;
     
         service.getAllCategories = function () {

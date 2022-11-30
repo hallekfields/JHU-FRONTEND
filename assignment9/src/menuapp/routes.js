@@ -26,21 +26,24 @@
         controller: 'CategoriesController as categoryList',
         resolve: {
           items: ['MenuDataService', function (MenuDataService) {
-            return MenuDataService.getItems();
+            return MenuDataService.getAllCategories();
           }]
         }
       })
     
-      // Premade list page
       .state('itemList', {
-        url: '/items',
+        url: '/items/{categoryShortName}',
         templateUrl: 'src/menuapp/templates/items.template.html',
         controller: 'ItemsController as itemList',
         resolve: {
-          items: ['MenuDataService', function (MenuDataService) {
-            return MenuDataService.getItems();
-          }]
-        }
+          item: ['$stateParams', 'MenuDataService',
+                function ($stateParams, MenuDataService) {
+                  return MenuDataService.getItemsForCategory()
+                    .then(function (items) {
+                      return items[$stateParams.itemId];
+                    });
+                }]
+          }
       });
     }
     
