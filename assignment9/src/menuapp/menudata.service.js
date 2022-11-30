@@ -27,6 +27,8 @@
             url: (ItemsApiEndPoint + categoryShortName + '.json')
             }).then(function (result) {
                 // return processed items
+                console.log(ItemsApiEndPoint + categoryShortName + '.json');
+                console.log(result);
                 return result.data;
             });
         };

@@ -7,8 +7,8 @@
     ItemsController.$inject = ['$stateParams', 'items'];
     function ItemsController($stateParams, items) {
       var itemList = this;
-      var item = items[$stateParams.categoryShortName];
-      itemList.items = item;
+      itemList.items = items;
+      itemList.category = $stateParams.categoryShortName;
     }
     
     })();

@@ -38,10 +38,7 @@
         resolve: {
           item: ['$stateParams', 'MenuDataService',
                 function ($stateParams, MenuDataService) {
-                  return MenuDataService.getItemsForCategory()
-                    .then(function (items) {
-                      return items[$stateParams.itemId];
-                    });
+                  return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
                 }]
           }
       });
