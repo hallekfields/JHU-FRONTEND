@@ -22,6 +22,20 @@ function MenuService($http, ApiPath) {
     });
   };
 
+  service.getAllMenuItems = function () {
+    return $http.get(ApiPath + '/menu_items.json').then(function (response) {
+      return response.data;
+    });
+  };
+
+  service.getMenuItemByShortName = function (shortName) {
+    var splitName = shortName.match(/[a-zA-Z]+|[0-9]+/g);
+    console.log(ApiPath + '/menu_items/' + splitName[0] + '/menu_items/' + (splitName[1]-1) + '.json');
+    return $http.get(ApiPath + '/menu_items/' + splitName[0] + '/menu_items/' + (splitName[1]-1) + '.json').then(function (response) {
+      return response.data;
+    });
+  };
+
 }
 
 
