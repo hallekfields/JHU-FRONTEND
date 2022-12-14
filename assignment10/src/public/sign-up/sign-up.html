@@ -62,7 +62,7 @@
     <span ng-if="regForm.favorite.$error.maxlength && regForm.favorite.$touched">
         The Menu Number must not be longer than 10 characters
     </span>
-    <span ng-if="regForm.favorite.$error.unknown">
+    <span ng-if="regForm.favorite.$error.unknown && regForm.favorite.$touched">
         No such menu number exists
     </span>
     <span ng-if="signUpCtrl.error !== ''">
@@ -71,7 +71,7 @@
     <br>
 
     <button
-        ng-disabled="regForm.$invalid"
+        ng-disabled="regForm.$invalid || regForm.$pending"
         ng-click="signUpCtrl.submit()">Submit</button>
     </form>
 </fieldset>
