@@ -5,7 +5,7 @@ describe('menu service', function () {
     var ApiPath;
   
     beforeEach(function () {
-      module('restaurant');
+      module('common');
   
       inject(function ($injector) {
         menu = $injector.get('MenuService');
@@ -17,7 +17,7 @@ describe('menu service', function () {
     it('should return menu item', function() {
       $httpBackend.whenGET(ApiPath + '/menu_items/L/menu_items/5.json').respond(['description', 'name']);
       menu.getMenuItemByShortName('L6').then(function(response) {
-        expect(response.data).toEqual(['description', 'name']);
+        expect(response).toEqual(['description', 'name']);
       });
       $httpBackend.flush();
     });
