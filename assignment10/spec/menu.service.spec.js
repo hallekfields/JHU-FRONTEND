@@ -15,19 +15,9 @@ describe('menu service', function () {
     });
   
     it('should return menu item', function() {
-      var responseMock = {
-        description: 'white meat chicken in a clear white sauce sauteed with mixed vegetables',
-        name: 'Chicken Vegetable',
-        price_large: 9.75,
-        short_name: 'L6'
-      }
-      $httpBackend.whenGET(ApiPath + '/menu_items/L/menu_items/5.json').respond(function () {
-        return [200, true];
-      });
+      $httpBackend.whenGET(ApiPath + '/menu_items/L/menu_items/5.json').respond(['description', 'name']);
       menu.getMenuItemByShortName('L6').then(function(response) {
-        expect(response.data).toEqual(
-          responseMock
-        );
+        expect(response.data).toEqual(['description', 'name']);
       });
       $httpBackend.flush();
     });
