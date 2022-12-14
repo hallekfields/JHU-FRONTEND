@@ -40,17 +40,6 @@
             });
         };
 
-        $ctrl.checkIfFavoriteKnown = function() {
-            MenuService.getMenuItemByShortName($ctrl.favorite).then(function(data) { 
-                if (data == null) {
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            });
-        }
-
         $ctrl.valid = function() {
             return ($ctrl.firstname !== '' && $ctrl.lastname !== '' && $ctrl.email !== '' && $ctrl.phone !== '' && $ctrl.favorite !== '' && $ctrl.error === '');
         };

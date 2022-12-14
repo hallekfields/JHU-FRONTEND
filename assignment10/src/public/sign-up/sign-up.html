@@ -2,7 +2,7 @@
 
 <fieldset>
     <legend>Registration</legend>
-    <form name='regForm'>
+    <form name='regForm' novalidate>
 
     <input type="text" name="firstname" placeholder="First Name"
         ng-model="signUpCtrl.firstname"
@@ -51,10 +51,10 @@
 
     <input type="text" name="favorite" placeholder="Favorite Dish"
         ng-model="signUpCtrl.favorite"
-        ui-validate="{unknown : checkIfFavoriteKnown}
-        required
         minlength="1"
-        ng-maxlength="10">
+        ng-maxlength="10" 
+        required
+        unknown>
     <span
         ng-if="(regForm.favorite.$error.minlength || regForm.favorite.$error.required) && regForm.favorite.$touched">
         You must enter the Menu Number for your Favorite Dish
@@ -63,6 +63,9 @@
         The Menu Number must not be longer than 10 characters
     </span>
     <span ng-if="regForm.favorite.$error.unknown">
+        No such menu number exists
+    </span>
+    <span ng-if="signUpCtrl.error !== ''">
         No such menu number exists
     </span>
     <br>
